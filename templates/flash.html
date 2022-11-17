@@ -1,0 +1,17 @@
+<html>  
+<head>  
+<title>Strona inforujaca o bledzie</title>  
+</head>  
+<body>  
+    <h1>Błędne dane w formularzu {{msg}}</h1>
+		
+		
+  <form action="/" method="post">
+	{% if msg == "logowania" %}
+    <input name="backLogin"   type="submit"   value="Wróć"/>
+	{% else %}
+	  <input name="backRegister"   type="submit"   value="Wróć"/>
+	{% endif %}
+	<form>
+</body>  
+</html>  

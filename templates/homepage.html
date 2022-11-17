@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+  <title>Strona zalogowanego użytkownika</title>
+  
+  <link rel="stylesheet" href="static/style.css">
+  
+  </head>
+  
+  <body>
+	<div class="Header">
+	  <form action="/logout" method="post">
+	    <input style="visibility: hidden;" name="name"   type="none" value="{{username}}"/>
+	    <input name="logout"   type="submit" value="Wyloguj"/>
+	  </form>
+	
+	  Witaj zalogowany użytkowniku! {{username}}
+	</div>
+	
+	Content
+	
+ </body>
+</html>
