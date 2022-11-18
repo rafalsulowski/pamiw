@@ -3,21 +3,28 @@ from flask import request, redirect, render_template
 from flask import make_response, render_template
 from uuid  import uuid4
 from bcrypt import checkpw
+from datetime import datetime
 import os
 import sqlite3
 
 app = Flask(__name__)
-app.use("/static", express.static('./static/'));
 currentDir = os.path.dirname(os.path.abspath(__file__))
 hashed_password = b'$2b$12$YegDi5sS7DB4QCA9/XfEGu4P7VFgKs5qaXjUqW87QI9V2kv3qFJaC'
-authenticated_users = {"ba12b970-228b-4d61-b8b8-ee428866b53f" : "bach"}
+
+
 
 
 @app.route("/", methods=["GET", "POST"])
 def index():
   
-  if "backRegister" in request.form:
-    return render_template("register-form.html")
+  if "moreInfo" in request.form:
+    id = request.form['packageId']
+    print("id= ", id)
+    return render_template("modify.html", id = id)
+  
+  if request.method == 'POST':
+    if "backRegister" in request.form:
+      return render_template("register-form.html")
 
   sid = request.cookies.get("sid")
   
@@ -27,19 +34,57 @@ def index():
   querySelect = "select name, sid from Users where Sid = '" + str(sid) + "';";
   result = cursor.execute(querySelect)
   received = list(cursor.fetchall())
-  connection.commit()
-  cursor.close()
   
   if len(received) != 0:
     usernameReceived = received[0][0]
     sidReceived = received[0][1]
     if sid == sidReceived:
-      return render_template("homepage.html", username = usernameReceived)
+      
+      #pobranie Paczek z bazy danych
+      querySelectPackage = "select * from Package";
+      result = cursor.execute(querySelectPackage)
+      received = list(cursor.fetchall())  
+      connection.commit()
+      cursor.close()
+      
+      return render_template("homepage.html", username = usernameReceived, len = len(received), Packages = received)
   else:
+    connection.commit()
+    cursor.close()
     return redirect("/authenticate", code=302)
     
     
+@app.route("/add", methods=["POST"])
+def add():
+    print("Add")
+    return redirect("/authenticate", code=302)
     
+    
+@app.route("/delete", methods=["DELETE"])
+def delete():
+    print("DELETE")
+
+
+
+
+
+@app.route("/packageInfo", methods=["POST"])
+def packageInfo():
+  id = request.form["id"]
+  status = "asd" 
+  date =  "df"
+  number = 1
+  print("id======= ", id)
+  return render_template("modify.html", numberP = number, idP = id, statusP = status, dateP = date)
+
+
+
+
+
+
+
+
+
 
 @app.route("/authenticate", methods=["GET", "POST"])
 def authenticate():

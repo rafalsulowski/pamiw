@@ -1,0 +1,32 @@
+<html>  
+<head>  
+  <title>Strona inforujaca o bledzie</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>  
+<body>
+
+	<div id="contentArea">
+		<div class="PackageInd">
+			<div id="spinInd">
+			<div id="topSpin">
+				<div id="ipaczki" >{{numberP}}</div>
+				<div id="id1" >Numer przesyłki obserwowanej</div>
+				<div id="id2" >{{idP}}</div>
+			</div>
+			<div id="imggs" ><img src="{{ url_for('static', filename='img/zd1.jpeg') }}" alt="decs" /></div>
+			<div style="clear: left;"></div>
+			<div id="st1" >Status</div>
+			<div id="date1" >Data</div>
+			<div style="clear: left;"></div>
+			<div id="st2" >{{statusP}}</div>
+			<div id="date2" >{{dateP}}</div>
+			</div>
+		</div>
+	</div>
+ 
+1. Zaprojektowac projekt w BPMN - ocena 3
+2. znaleźć narzędzie do projektowanai procesow binesowych (Aris, enterprcie architket, vizaki/visaki/isaki/izaki)
+3. przeniesc z papieru na komputer - ocena 4
+4. Symulacja projektu - ocena 5
+</body>  
+</html>  

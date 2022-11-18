@@ -2,22 +2,89 @@
 <html>
   <head>
   <title>Strona zalogowanego użytkownika</title>
-  
-  <link rel="stylesheet" href="static/style.css">
-  
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='scripts/script.js') }}"></script>
   </head>
   
+	
   <body>
-	<div class="Header">
-	  <form action="/logout" method="post">
-	    <input style="visibility: hidden;" name="name"   type="none" value="{{username}}"/>
-	    <input name="logout"   type="submit" value="Wyloguj"/>
-	  </form>
+		<div class="Header">
+			<form action="/logout" method="post">
+				<input style="visibility: hidden;" name="name"   type="none" value="{{username}}"/>
+				<input name="logout"   type="submit" value="Wyloguj"/>
+			</form>
+			Witaj zalogowany użytkowniku! {{username}}
+		</div>
 	
-	  Witaj zalogowany użytkowniku! {{username}}
-	</div>
 	
-	Content
-	
- </body>
+	  <div id = "Area">
+	    <div id="shearch">		
+			  <div id="add">
+					<form action="/add" method="post">
+					<input style="background-color: rgb(159,250,255);" name="add" type="submit" value="Dodaj przesyłke"/>
+				</form>
+				</div>
+				<div id="delete">
+					<form action="/delete" method="post">
+					<input style="background-color: rgb(255,100,100);" name="delete" type="submit" value="Usuń przesyłke"/>
+				</form>
+				</div>
+				<div id="live">
+					<form action="/search" method="post">
+						Wyszukaj paczkę po identyfikatorze:
+					<input name="search" id="search" type="text" value=""/>
+				</form>
+				</div>
+	    </div>
+			
+			
+			<div id="contentArea">
+				<div class="Package">
+					<table id="ta">
+						<tbody id="myTable">
+							{% for i in range(0, len) %}
+								<tr>
+									<td>
+										<div id="spin">
+											<div id="topSpin">
+												<div id="ipaczki" >{{i + 1}}</div>
+												<div id="id1" >Numer przesyłki obserwowanej</div>
+												<div id="id2" >{{Packages[i][0]}}</div>
+											</div>
+											<div id="imggs" ><img src="{{ url_for('static', filename='img/zd1.jpeg') }}" alt="decs" /></div>
+											<div style="clear: left;"></div>
+											<div id="st1" >Status</div>
+											<div id="date1" >Data</div>
+											<div style="clear: left;"></div>
+											<div id="st2" >{{Packages[i][1]}}</div>
+											<div id="date2" >{{Packages[i][2]}}</div>
+											<div id="text1"><form action="/packageInfo" method="post"><input style="visibility: hidden;" name="id" type="none" value={{Packages[i][0]}} /><input name="packageInfo" type="submit" value="więcej"/></form></div>
+										</div>
+									</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+			  </div>
+	    </div>
+	  </div>
+		
+		
+		<div id="footer">
+				stopka
+	  </div>
+		
+		
+		<script>
+		$(document).ready(function(){
+			$("#search").on("keyup", function() {
+				var value = $(this).val().toLowerCase();
+				$("#myTable tr").filter(function() {
+					$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+				});
+			});
+		});
+		</script>
+  </body>
 </html>
