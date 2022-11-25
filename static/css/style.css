@@ -1,164 +1,148 @@
-.Header{
-  text-align: right;
+.Header {
+    text-align: right;
 }
 
-#ta
-{
-	margin-left: auto;
-	margin-right: auto;
+#ta {
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#myTable
-{
-  align-items: center;
+#myTable {
+    align-items: center;
 }
 
-#Area{
-  margin-top: 10px;
-  text-align: center;
-  align-items: center;
-  min-height: 800px;
+#Area {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    align-items: center;
+    min-height: 800px;
 }
 
-#Package
-{
-  align-items: center;
+#Package {
+    align-items: center;
 }
 
-#PackageInd
-{
-  align-items: center;
+#PackageInd {
+    align-items: center;
 }
 
-#shearch{
-  text-align: center;
-  height: 50px;
-  padding-top: 15px;
-  border: 5px dashed;
-  align-items: center;
+#shearch {
+    text-align: center;
+    height: 50px;
+    border: 5px solid;
+    align-items: center;
 }
 
-#add{
-	margin-left: 10px;
-	float: left;
+#nav {
+    width: 200px;
+    min-height: 800px;
+    float: left;
 }
 
-#delete{
-	margin-left: 15px;
-	float: left;
+#add {
+    margin-top: 10px;
 }
 
-#live{
-	margin-left: 20px;
-	float: left;
+#delete {
+    margin-top: 10px;
 }
 
-#contentArea{
-  text-align: center;
-	min-height: 720px;
-  align-items: center;
+#contentArea {
+    text-align: center;
+    min-height: 720px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#footer{
-	border-top: 1px solid;
-  text-align: center;
-  height: 30px;
-  align-items: center;
-	margin-top: 10px;
+#footer {
+    border-top: 1px solid;
+    text-align: center;
+    height: 30px;
+    clear: left;
 }
 
-#spin{
-	background-color: rgb(200, 200, 200);
-	margin-top: 15px;
-	padding: 5px;
-	width: 350px;
-	margin-left: auto;
-	margin-right: auto;
+#spin {
+    background-color: rgb(200, 200, 200);
+    margin-top: 15px;
+    padding: 5px;
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#spinInd{
-	background-color: rgb(200, 200, 200);
-	margin-top: 15px;
-	padding: 5px;
-	width: 350px;
-	height: 230px;
-	margin-left: auto;
-	margin-right: auto;
+#spinInd {
+    background-color: rgb(200, 200, 200);
+    margin-top: 15px;
+    padding: 5px;
+    width: 350px;
+    height: 230px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#topSpin
-{
-	width: 260px;
-	float: left;
+#topSpin {
+    width: 260px;
+    float: left;
 }
 
-
-#ipaczki
-{          
-  float: left;
-	width: 30px;
-	height: 20px;
+#ipaczki {
+    float: left;
+    width: 30px;
+    height: 20px;
 }
 
-#imggs
-{
-	margin-top: 1px;
-	margin-left: 1px;
-	width: 83px;
-	height: 50px;
-  float: left;
+#imggs {
+    margin-top: 1px;
+    margin-left: 1px;
+    width: 83px;
+    height: 50px;
+    float: left;
 }
 
-#id1
-{
-	width: 220px;
-	height: 20px;
-  float: left;
+#id1 {
+    width: 220px;
+    height: 20px;
+    float: left;
 }
 
-#id2
-{
-	width: 220px;
-	padding-top: 5px;
-	height: 20px;
-  clear: left;
+#id2 {
+    width: 220px;
+    padding-top: 5px;
+    height: 20px;
+    clear: left;
 }
 
-#st1
-{
-	width: 160px;
-	height: 20px;
-	text-align: left;
-  float: left;
+#st1 {
+    width: 160px;
+    height: 20px;
+    text-align: left;
+    float: left;
 }
 
-#date1
-{
-	width: 182px;
-	height: 20px;
-  float: left;
-	text-align: right;
+#date1 {
+    width: 182px;
+    height: 20px;
+    float: left;
+    text-align: right;
 }
 
-#st2
-{
-	text-align: left;
-  float: left;
-	width: 160px;
-	height: 40px;
+#st2 {
+    text-align: left;
+    float: left;
+    width: 160px;
+    height: 40px;
 }
 
-#date2
-{
-  float: left;
-	text-align: right;
-	width: 182px;
-	height: 40px;
+#date2 {
+    float: left;
+    text-align: right;
+    width: 182px;
+    height: 40px;
 }
 
-#text1 
-{
-	clear: left;
-	text-align: right;
+#text1 {
+    clear: left;
+    text-align: right;
 }
-

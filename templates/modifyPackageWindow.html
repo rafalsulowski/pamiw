@@ -1,0 +1,16 @@
+Modyfikujesz paczkę o identyfikatorze {{ id }}</br></br></br></br>
+<form action="/stricteModifyDefinitive" method="POST">
+    <input name="number" type="hidden" value="{{number}}"/>
+    <input name="oldId" type="hidden" value="{{id}}"/>
+    
+    <label for="id">Nowy identyfikator</label>
+    <input name="id" type="text" value="{{id}}"/>
+    </br></br>
+    <label for="status">Nowy status</label>
+    <input name="status" type="text" value="{{status}}"/>
+    </br></br>
+    <label for="date">Nowa data</label>
+    <input name="date" type="text" value="{{date}}"/>
+    </br></br>
+    <input type="submit" value="Zatwierdź"/>
+<form>

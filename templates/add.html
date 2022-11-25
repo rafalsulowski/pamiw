@@ -1,0 +1,34 @@
+<h1>Dodajesz nową paczkę</h1>
+</br></br>
+<form action="/add" method="POST">
+    <label>Nowy identyfikator:</label>
+    <input id="storageGen" name="id" type="text" value="" readonly/>
+    <input id="generateNewID" name="generateID" onclick = "getRandomID()" type="button" value="Wygeneruj"/>
+    </br></br>
+    <label for="status">Aktualny status (domyślnie: "w przygotowaniu u nadawcy"):</label>
+    <input name="status" type="text" value=""/>
+    </br></br>
+    <label for="date">Data nadania:</label>
+    <input name="date" type="text" value=""/>
+    </br></br>
+    <input type="submit" value="Zatwierdź"/>
+</form>
+<form action="/" method="GET">
+    <input type="submit" value="Anuluj"/>
+</form>
+
+<script>
+    function getRandomID() {
+        const characters ='0123456789';
+
+        let result = "";
+        const charactersLength = characters.length;
+        for ( let i = 0; i < 18; i++ ) {
+            if(i == 9)
+                result += "-";
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+
+        document.getElementById("storageGen").value = result;
+    }
+</script>

@@ -1,16 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
- <head><title>Strona logowania</title></head>
+  <head>
+    <title>Strona logowania</title>
+  </head>
 
- <body>
-  <form action="/authenticate" method="post">
-    <input name="username" type="text"     value="" />
-    <input name="password" type="password" value="" />
-    <input name="login"   type="submit"   value="zaloguj"/>
-  </form>
-	
-	<form action="/authenticate" method="post">
-    <input name="register"   type="submit"   value="zarejestruj"/>
-	</form>
- </body>
+  <body>
+    <form action="/authenticate" method="post">
+      <input name="username" type="text" value="" />
+      <input name="password" type="password" value="" />
+      <input name="login" type="submit" value="zaloguj" />
+    </form>
+
+    <form action="/register" method="get">
+      <input name="register" type="submit" value="zarejestruj" />
+    </form>
+  </body>
 </html>

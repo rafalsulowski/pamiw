@@ -5,13 +5,18 @@
 <body>  
     <h1>Błędne dane w formularzu {{msg}}</h1>
 		
-		
-  <form action="/" method="post">
 	{% if msg == "logowania" %}
-    <input name="backLogin"   type="submit"   value="Wróć"/>
-	{% else %}
-	  <input name="backRegister"   type="submit"   value="Wróć"/>
-	{% endif %}
+  	<form action="/authenticate" method="get">
+    	<input name="login"   type="submit"   value="Wróć"/>
 	<form>
+	{% elif msg == "nowej paczki" %}
+	<form action="/add" method="get">
+	  <input name="add"   type="submit"   value="Wróć"/>
+    <form>
+	{% else %}
+	<form action="/register" method="get">
+		<input name="register"   type="submit"   value="Wróć"/>
+    <form>
+	{% endif %}
 </body>  
-</html>  
+</html>
